@@ -11,7 +11,6 @@ import com.example.demo_jwt.pojos.LoginUserRequest;
 import com.example.demo_jwt.repositories.UserRepository;
 import com.example.demo_jwt.service.UserService;
 import com.example.demo_jwt.util.AppUtil;
-import com.example.demo_jwt.util.ResponseCodeUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,14 +26,11 @@ import javax.validation.ValidationException;
 public class UserServiceImplementation implements UserService {
 
     private final UserRepository userRepository;
-    private final ResponseCodeUtil responseCodeUtil;
     private final PasswordEncoder passwordEncoder;
     private final CustomUserDetailsService customUserDetailsService;
-
     public final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
     private final AppUtil appUtil;
-    //private final CreateUserResponse createUserResponse;
 
     @Override
     public ResponseEntity<ApiResponse> signUp(CreateUserRequest createUserRequest) {
@@ -54,7 +50,7 @@ public class UserServiceImplementation implements UserService {
 
         userRepository.save(user);
 
-        return ResponseEntity.ok(new ApiResponse("successful", "signup successful. check your mail", null));
+        return ResponseEntity.ok(new ApiResponse("successful", "signup successfully...", null));
     }
 
     @Override
@@ -85,6 +81,6 @@ public class UserServiceImplementation implements UserService {
                 .build();
 
         return new ApiResponse<>("Success", "User Profile", response);
-    }
+}
 
 }
