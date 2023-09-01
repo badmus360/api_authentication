@@ -7,10 +7,7 @@ import com.example.demo_jwt.pojos.CreateUserRequest;
 import com.example.demo_jwt.pojos.LoginUserRequest;
 import org.springframework.http.ResponseEntity;
 
-import java.util.List;
-
 public interface AdminService {
-//    ViewAllUserResponse getAllUsers();
     ResponseEntity<ApiResponse> signUp(CreateUserRequest createUserRequest);
     ResponseEntity login(LoginUserRequest loginUserRequest);
     ApiResponse<UserProfileResponse> getAdminProfile();
