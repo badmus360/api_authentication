@@ -1,6 +1,5 @@
 # api_authentication
 a server app that authenticates users
-I apologize for the confusion earlier. Here's a compressed version in eight lines:
 
 "A server app authenticates users and admins, securing access for both. It verifies IDs, ensuring user and admin credentials are valid. 
 Operating on the server side, it confirms identities, securely hosted to validate personnel. This application handles authentication for 
